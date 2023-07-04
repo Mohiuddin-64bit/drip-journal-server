@@ -1,10 +1,10 @@
 const express = require("express");
+const uri =
+  "mongodb+srv://DripJournal:QjNJHLJU8smzHNiu@cluster0.bfg1fsg.mongodb.net/?retryWrites=true&w=majority";
 const cors = require("cors");
 const app = express();
 const port = process.env.PORT || 5000;
 const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
-const uri =
-  "mongodb+srv://DripJournal:QjNJHLJU8smzHNiu@cluster0.bfg1fsg.mongodb.net/?retryWrites=true&w=majority";
 
 app.use(cors());
 
@@ -22,7 +22,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    await client.connect();
+    // await client.connect();
 
     const information = client.db("DripJournal").collection("information");
 
